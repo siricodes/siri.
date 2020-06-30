@@ -13,3 +13,6 @@ bindkey -v
 zstyle :compinstall filename '/home/siri/.config/zsh/.zshrc'
 autoload -Uz compinit
 compinit
+
+# Source zinit & load plugins.
+source $ZDOTDIR/.zinitrc

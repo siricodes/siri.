@@ -1,1 +1,20 @@
-exec dwm
+#!/bin/sh
+
+# Load Xresources for any application that needs it.
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/xresources 
+
+# Start the compositor for transparency/vsync.
+picom &
+
+# Set the background using the setbg script.
+setbg &
+
+# Start the status bar.
+dwmblocks &
+
+# Start the notification service.
+dunst &
+
+# Finally, start the window manager.
+# Let ssh-agent run as long as dwm is running for easier ssh-ing.
+exec ssh-agent dwm

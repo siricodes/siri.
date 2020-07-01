@@ -1,3 +1,5 @@
+# vim: filetype=zsh
+
 ### Added by Zinit's installer
 if [[ ! -f $ZINIT_HOME/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -20,3 +22,16 @@ zinit light-mode for \
     zinit-zsh/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
+
+# fast completions
+zinit wait lucid for \
+	 atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+	     zdharma/fast-syntax-highlighting \
+	      blockf \
+	          zsh-users/zsh-completions \
+		   atload"!_zsh_autosuggest_start" \
+		       zsh-users/zsh-autosuggestions
+
+# theme
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+zinit light sindresorhus/pure

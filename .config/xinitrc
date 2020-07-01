@@ -15,6 +15,12 @@ dwmblocks &
 # Start the notification service.
 dunst &
 
+# Hide mouse cursor when unused.
+unclutter --jitter 5 --timeout 3 &
+
+# enable hotkeys
+sxhkd &
+
 # Finally, start the window manager.
 # Let ssh-agent run as long as dwm is running for easier ssh-ing.
 exec ssh-agent dwm

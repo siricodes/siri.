@@ -1,0 +1,30 @@
+# Default applications
+super + shift + Return
+	$BROWSER
+super + u
+	$TERMINAL -e neomutt
+super + i
+	$TERMINAL -e newsboat
+
+# Incognito mode
+alt + shift + Return
+	$BROWSER --incognito
+
+# quit
+super + shift + q
+	quitmenu
+
+# xf86 keys
+XF86Mail
+	$TERMINAL -e neomutt
+XF86HomePage
+	$BROWSER
+
+# Volume
+XF86Audio{Raise,Lower}Volume
+	amixer sset Master 5%{+,-};pkill -RTMIN+10 dwmblocks
+XF86AudioMute
+	amixer sset Master toggle;pkill -RTMIN+10 dwmblocks
+# Screenshot
+Print
+	maimpick

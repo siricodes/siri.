@@ -28,3 +28,7 @@ XF86AudioMute
 # Screenshot
 Print
 	maimpick
+
+# Lock
+super + semicolon
+	slock
